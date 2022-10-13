@@ -1,0 +1,211 @@
+https://refactoring.guru/design-patterns/catalog
+-------
+-------
+Consider the following facade class:
+
+public class ComputerFacade {
+    private CPU processor;
+    private Memory ram;
+    public void startComputer() {
+       processor = new Process(ProcessorType.INTEL);
+       ram = new Memory(16384);
+       ram.initialize();
+       processor.start();
+    }
+}
+
+Which is a likely explanation for needing to redesign the facade?
+
+The structure of the subsystem changed.
+-------
+What is a negative side effect of using the template method pattern?
+
+Tight coupling
+-------
+What is the role of the State pattern?
+
+It allows an object to change its behavior without changing its class.
+-------
+When using a factory method pattern, how can you implement factory instances at creation?
+
+As parameterized methods
+-------
+In the following block of code, Communication, CommunicationState, and ReadState are already implemented. Which is a disadvantage of the state pattern, as exhibited in the following code snippet?
+
+public class DraftState implements CommunicationState {
+    @Override
+    public void next(Communication comm) {
+        comm.nextState(new SentState());
+    }
+}
+public class SentState implements CommunicationState {
+    @Override
+    public void next(Communication comm) {
+        comm.nextState(new DeliveredState());
+    }
+}
+public class DeliveredState implements CommunicationState {
+    @Override
+    public void next(Communication comm) {
+        comm.nextState(new ReadState());
+    }
+}
+
+The state transitions are hard-coded and cannot be changed at runtime.
+-------
+What are the characteristics of a factory?
+
+It has multiple constructors that are publicly exposed.
+-------
+Which method in the following code is a template method?
+
+public class TrainTicket {
+    public static TrainTicket createTrainTicket(Traveler traveler) {
+        if (traveler.isSenior()) {
+            return new SeniorTrainTicket();
+        } else {
+            return new RegularTrainTicket();
+        }
+    }
+    public long calculatePrice() {
+        return calculateBasePrice() - getDiscount();
+    }
+    private long calculateBasePrice() {
+        return ...; // implementation omitted
+    }
+    protected abstract long getDiscount();
+}
+
+
+calculatePrice
+-------
+What is the biggest advantage of using an object adapter rather than a class adapter?
+
+It's more flexible because it can adapt a hierarchy of adapted classes or interfaces, instead of one specific adapted class.
+-------
+When using the adapter pattern, which class/object defines an existing interface that needs adapting? 
+
+Adaptee
+-------
+How does the strategy design pattern support the separation of concerns software design principle?
+
+By separating the implementation of a specific responsibility of a class into one or more strategy implementation classes
+-------
+Which design pattern is the Timer class in the following code?
+
+public class Timer {
+   long startTime = 0;
+   public void start () {
+     GregorianCalendar cal = new GregorianCalendar();
+     startTime = cal.getTime().getTime();
+   }
+   public String stop () {
+     GregorianCalendar cal = new GregorianCalendar();
+     long elapsedTime = cal.getTime().getTime() - startTime;
+     return Long.toString(elapsedTime);
+   }
+   public void clear() {
+     startTime = 0;
+   }
+}
+
+Facade pattern
+-------
+What does a facade design pattern do to the relationship between a client implementation and a complex subsystem? 
+
+It decouples them  
+-------
+What is a typical way that the template method pattern is implemented in Java? 
+
+As a non-abstract method that calls abstract methods in the same class; it's up to subclasses to implement the abstract methods 
+-------
+You are designing an application about mobile phones and came up with the following design:
+
+public interface Phone {
+   public void on();
+   public void off();
+}
+
+And the following implementations: iPhone, Note, Razor.
+
+Rather than writing an adapter for the constantly changing features of phones, what design pattern could you use to refactor your design so you can vary the phone abstraction independently of its implementations?
+
+Bridge pattern
+-------
+Which is a common shortcoming when using the adapter design pattern?
+
+It's not always possible to adapt functionality.
+-------
+Given the following strategy interface
+
+public interface ValidationStrategy {
+    public boolean isValid(Object input);
+}
+
+And the following implementations:
+
+1 public class AlwaysValid implements ValidationStrategy {
+2    public boolean isValid(Object input) {
+3       return true;
+4    }
+5 }
+
+1 public class IsValidString implements ValidationStrategy {
+2    public boolean isValid(Object input) 
+3       return input instanceof String;
+4    }
+5 }
+
+Which part of the code is an example of a pitfall when using the strategy pattern?
+
+Line 2-3 in the AlwaysValid implementation because it shows that some strategies do not use all data that are passed to the strategy.
+-------
+ou encountered the following problematic code and realize that the author has confused how the Chain of Responsibility (CoR) pattern and the Command pattern interact.
+
+Chain chain = new Chain();
+Processor p = new Processor();
+chain.add(new CommandUpButton(p));
+chain.add(new CommandDownButton(p));
+
+How would you clear up the confusion?
+
+Use the Command pattern to encapsulate the request passed through each step in the chain, not to represent the different steps in the chain.
+-------
+Which negative effects could happen while debugging an application that uses the proxy pattern?
+
+A breakpoint that is set on an object behind a proxy may never be reached.
+-------
+The following program represents an implementation of roller coasters at a theme park that a guest is currently riding. Based on this implementation, what could be a pitfall of using the state pattern for this?
+
+public class ScreamMachine implements RollerCoasterState {
+    @Override
+    public void nextRide(RollerCoaster rc) {
+        ...
+    }
+}
+public class CometCoaster implements RollerCoasterState {
+    @Override
+    public void nextRide(RollerCoaster rc) {
+        ...
+    }
+}
+public class NightHawk implements RollerCoasterState {
+    @Override
+    public void nextRide(RollerCoaster rc) {
+        ...
+    }
+}
+
+The maintenance gets more difficult as more classes are added and changes are requested. 
+-------
+The two component types present in the composite pattern are leaf and composite. You are implementing a composite node's BEHAVIOR. What design technique will you use?
+
+Delegation
+-------
+In the composite pattern, all concrete classes declare an IS-A relationship to the interface. This feature, although not necessarily a problem in the context of this pattern, goes against which general design principle?
+
+Prefer composition over inheritance
+-------
+How are requests treated when using the adapter design pattern? 
+
+The pattern object forwards all requests. 

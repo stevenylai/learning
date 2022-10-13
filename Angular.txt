@@ -1,0 +1,53 @@
+You created an Angular application in your workspace but did not include routing. You now want to include routing and use the default app routing module. What command can you use to add routing with the Angular command-line interface (CLI)?
+
+ng generate module --routing
+----------
+What is the routerLinkActive directive used for?
+
+To add or remove classes from an HTML element that is bound to a routerLink
+----------
+An app.component displays other components with a router outlet. You want to apply styles to this app.component. What would you use as a selector so that the parent component styles remain unaffected?
+
+:host
+----------
+Which method can you use to bypass security and to trust that the given value is a safe resource URL?
+
+bypassSecurityTrustResourceUrl()
+----------
+Angular uses zone.js to monkey patch each asynchronous event, so whenever any event occurs Angular runs change detection over its component tree, which leads to low performance. How can you fix this?
+
+Use the OnPush change detection strategy, which disables change detection from running on a component and its children.
+----------
+How can you simulate a server and return mock data with the HTTP requests in Angular?
+
+By using json Server
+----------
+What is the effect of creating an Angular application with the following command?
+
+It creates an empty workspace
+----------
+Given the following code, where do you associate the form element with the form data structure?
+
+this.heroForm = new FormGroup({
+      heroName: new FormControl(),
+      identityName: new FormControl()
+});
+
+In the HTML on the form element: [formGroup]="heroForm"
+----------
+Given the following template-driven form template:
+
+<form (ngSubmit)="onSubmit()">...</form>
+
+What change would cause the onSubmit method to receive the values that the user inputs into the form?
+
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">...</form>
+----------
+Given the following constructor for a component:
+
+ constructor(private myService: MyService)
+
+Which block of code is equivalent for the purposes of dependency injection?
+
+constructor(@Inject(MyService) private myService)
+----------

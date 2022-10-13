@@ -1,0 +1,40 @@
+What must you select on the Windows Setup screen for a clean installation of Windows 10?
+
+Custom: Install Windows only (advanced)
+----------
+Which network profiles are available in Windows Defender Firewall with Advanced Security on Windows 10 joined to Azure Active Directory (Azure AD)?
+
+Domain, private, and public
+----------
+Your organization procured Microsoft Surface devices with Windows 10, which roaming users will use to access cloud-based applications. What management strategy is best suited for such devices?
+
+Azure Active Directory join
+----------
+What service in Azure can you use to manage updates for a Windows 10 environment?
+
+Microsoft Intune
+----------
+You have a computer on which you intend to block access to a certain application for a group of users. What local policy and setting should you use to configure this?
+
+Select App Locker and then Configure rule enforcement.
+----------
+You are in charge of selecting a Windows 10 edition for your medium-sized business. You want the operating system to support Azure Active Directory Domain join while minimizing the expense. Which edition should you pick?
+
+Windows 10 Pro
+----------
+What four key components does a language in Windows 10 consist of?
+
+Language pack, basic typing, handwriting, and speech
+----------
+Which virtual private network (VPN) type should you configure in Windows 10 when you are unsure of the protocol that your organization’s VPN connection uses?
+
+Automatic
+----------
+You want to modify file C:\Windows\System32\drivers\etc\lmhosts.sam for manual IP address mapping. Because of restricted New Technology File System (NTFS) permissions, you are unable to do so despite being an Administrator. What should you do to ensure that you are able to modify it?
+
+Take ownership of the lmhosts.sam file.
+----------
+A Windows 10 Pro computer is having trouble upgrading to a Windows 10 Enterprise subscription-based license assigned through the Office 365 portal. How can you check the build number of the operating system?
+
+Use winver from command line
+----------

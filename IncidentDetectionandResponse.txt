@@ -1,0 +1,37 @@
+What is impossible to detect with a DLP system? 
+
+Steganography 
+----------
+Your company implements a SIEM solution for increased detection capabilities correlating events across hosts. The implementation team wants to collect netflow from their network equipment, but they do not have compatible devices. What solution should they implement? 
+
+Use netflow generators on SPAN ports 
+----------
+An IT department employee needs their laptop recovered after a virus infection, but there is not enough recovered data and no update system image available. What approach should be applied?
+
+Apply sanitization techniques and keep the system under full network and running process monitoring.
+----------
+What device blocks commands changing user or operating system data stored on a protected drive?
+
+Hardware Write blocking device (HWB)
+----------
+You are looking for flaws related to the Document Object Model (DOM). You need to create a sink point for the data flow where the browser will execute the malicious JavaScript code. What tools can you use? 
+
+Burp Suite 
+----------
+What is the process of acquiring or gathering information and evidence about a cyber incident? 
+
+
+Acquisition 
+----------
+A security analyst at a big bank observes unusually slow network performance which they confirm to be caused by a DDoS attack. They apply the required steps in order to mitigate its effects. What is the next step after recovering from the attack?
+
+Check for other cybercrimes, including data breaches or financial fraud
+----------
+Based on the standard operating procedures in place, you have to investigate any out-of-the-ordinary increases in bandwidth utilization, which you are seeing with one of the web servers. What type of analysis would be most appropriate to tell if this is abnormal traffic? 
+
+Trend analysis
+----------
+What standard enforces the list of Approved Scanning Vendors and implements certain requirements?
+
+Payment Card Industry Data Security Standard (PCI DSS) 
+----------

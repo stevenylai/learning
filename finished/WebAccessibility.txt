@@ -1,0 +1,62 @@
+A form has multiple errors found on form submission. How should you notify a user?
+
+Provide a list of all errors at the top of the form. 
+-------
+What is the definition of semantic markup?
+
+A way of writing HTML that preferences the structure of the web page over it's visual presentation
+-------
+When developing a custom component, which Cascading Style Sheet (CSS) sizing unit should you use to ensure page zooming is supported?
+
+rem
+-------
+A user is reading a news article in an online newspaper that contains an illustration and additional links for more information. Instructional copy describes where the links are located but some assistive technology users are struggling to locate them. As the Web Editor, what 'best practice' steps would you take to ensure assistive technology users know where to look?
+
+Include the links within the article; provide an in-page link to the links in the article; position a heading above the links and refer to the heading in the instructions. 
+-------
+You have the following incorrect heading structure:
+
+    <h1>Articles</h1>
+    <h2>Food</h2>
+    <section>
+    <h1>South American</h1>
+    <h3>Chile</h3>
+    </section>
+    <h2>Science</h2>
+    <h2>Cars</h2>
+
+Which line has the incorrect heading level?
+
+4 (<h1>South American</h1>)
+-------
+You are testing a website and realize some pages are only available client-side, therefore an automated testing tool cannot access them. What manual tests do you need to perform on those pages now that the automated testing tools can't access them?
+
+Check that a language value is assigned; check that the ALT attribute is present on images; check that labels are associated with elements; check color contrast
+-------
+You tested a website with an automated web accessibility evaluation tool and it was compliant with WCAG 2.1. You then tested the website with a panel of testers with varying disabilities who found several accessibility issues. What might be some of the issues the testers found but the automated tool was not able to detect?
+
+Incomprehensible page content; inaccurate or uninformative ALT text; unclear label text
+-------
+Which of the four web accessibility principles might users with motor control issues struggle with the most?
+
+Operable 
+-------
+You are asked to do accessibility testing in the home of a person who is visually impaired. The person has no access to assistive technology and no means to purchase any. What questions do you need to ask the tester prior to the test session so that you can prepare for it?
+
+Ask the tester: what type of visual impairment they have; what type of operating system they use; what applications they use regularly 
+-------
+What are valid HTML landmarks?
+
+<main>, <nav>, and <aside>
+-------
+What is a solution for providing a label for a logical group of form input fields?
+
+Wrapping the input fields with a fieldset and providing a legend
+-------
+What are the main accessibility issues with CAPTCHA?
+
+Screen readers cannot read a visual CAPTCHA and audio CAPTCHA present difficulties for people with hearing impairment. 
+-------
+As an Accessibility Consultant for your company, what would you do to check an audio or video element for compliance with WCAG Success Criterion 1.4.2 (Audio Control)?
+
+If audio sound starts playing automatically, then check that it either plays for no more than three seconds, or else a means is provided for the user to stop, pause, or to control its volume separately from the overall system sound.
