@@ -51,3 +51,53 @@ Which block of code is equivalent for the purposes of dependency injection?
 
 constructor(@Inject(MyService) private myService)
 ----------
+You have an Angular application that restricts access to the user area with a password. This area's home component is protected using the CanActivate route guard, but it has child routes. How do you protect these child routes?
+
+The home components route guard will protect the child routes. 
+----------
+What option do you pass to ng build to minify your code?
+
+--optimization
+----------
+What is the purpose of the router-outlet directive?
+
+To serve as a placeholder that displays the components that the application routes to
+----------
+You have a component that has two router outlets. Why do you need the name attribute on the second router outlet?
+
+To indicate it is not the primary outlet
+----------
+Why must you use the ngFor directive in conjunction with the trackby function?
+
+To increase the application performance by only adding the new data into the Document Object Model (DOM)
+----------
+In integration testing you want to mock the HTTP call instead of raising the HTTP call to test the actual API. HttpClient creates the HTTP call of the BehanceService to test the API. How can you mock the HTTP call?
+
+Use HttpClientTestingModule to mock the API so that the actual HTTP call doesn't go out.
+----------
+You are building a project of type "library" with the ng build command. What option would you pass to this command when you invoke a different builder?
+
+--configuration
+----------
+Given the following input element, what syntax must you check to see if the user engaged/modified the input element?
+
+<input id="heroNameId"
+       type="text"
+       required
+       [(ngModel)] = hero.name
+       name="heroName"
+       #heroNameVar="ngModel" />
+       
+heroNameVar.dirty
+----------
+How could you set an element's background color based on a property color of the component class?
+
+[style.background-color]="color"
+----------
+Your Angular application loads data from a remote source. You are logging any errors and the first response from the server is failing, but the server is online. What can you do besides logging the error?
+
+Use the RxJS retry operator.
+----------
+How would you tell Angular that the lazy loaded bundles should be loaded as soon as possible, without affecting the user interface?
+
+Using the PreloadAllModule strategy
