@@ -1,0 +1,55 @@
+What annotation would you use to ensure the ActivityTestRule instance is picked up by the Espresso framework? 
+
+@Rule
+--------------
+You have created a UI test class, but the tests are not launching the activity to be tested, what's the most likely reason for this? 
+
+The ActivityTestRule instance is not declared with @Rule annotation.
+--------------
+How would you perform an action on an item in RecyclerView that is not currently being shown on the screen? 
+
+Bring it on screen using scrollToPosition
+--------------
+Which types of tests does dependency injection help with? 
+
+Unit tests 
+--------------
+Your app has a UI workflow that spans across multiple apps, which testing framework would you use? 
+
+UI automator 
+--------------
+What's the purpose of creating ExploreByTouchHelper instance for a custom view? 
+
+To provide implementations for callbacks needed by accessibility service 
+--------------
+What would the return value of UiCollection.getChildCount be when you use it on a scrollable list of items?
+
+The number of items visible on screen 
+--------------
+You have set up tests for interacting with elements inside WebView but all tests are failing. What is the most likely fix for this? 
+
+JavaScript should be enabled by calling onWebView().forceJavascriptEnabled from the afterActivityLaunched method. 
+--------------
+Which of the following can NOT be specified with a resource qualifier via Config annotation?
+
+Device time 
+--------------
+What's the correct way to test a private method of a class? 
+
+Using the public methods that use it 
+--------------
+Which (one) of the following annotations is used to inject mocked objects into a test object (subject)?
+
+@InjectMocks
+--------------
+Which of the following methods can be used to get the actual intent that was fired when another activity is explicitly started in a test? 
+
+ShadowApplication.getInstance().getNextStartedActivity()
+--------------
+If you have to isolate the class under test from its dependencies what technique would you use to achieve it? 
+
+Dependency injection 
+--------------
+Which of the following is NOT a valid case to test using Espresso? 
+
+When you need to simulate click on the system home button. 
