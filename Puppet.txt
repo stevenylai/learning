@@ -1,0 +1,125 @@
+A new certificate has been generated when a Puppet agent run took place on a new node. Which command can you use to sign a new certificate request?
+
+puppetserver ca sign --certname cert.example.com
+------------
+You have just finished a successful code deployment. However, inspection of the console reveals that a class you added is being hidden. After checking the disk and ensuring that the environment folder exists, what should you do next to make the class appear in the console?
+
+In the Edit Node Group Metadata, check your node group to verify that it's using the correct environment.
+------------
+What are you required to do to run a command on WinRM targets?
+
+Indicate the WinRM protocol in the targets string
+------------
+You work for a Software company and are tasked by your superior to enable Code Manager for your company's Puppet Enterprise. How would you configure Code Manager during a fresh installation of PE?
+
+Add the parameters,
+
+"puppet_enterprise::profile::master::r10k_remote":"git@<YOUR.GIT.SERVER.COM>:puppet/control.git"
+"puppet_enterprise::profile::master::r10k_private_key": "/etc/puppetlabs/puppetserver/ssh/id-control_repo.rsa"
+puppet_enterprise::profile::master::code_manager_auto_configure": true
+
+to pe.conf before installation.
+------------
+You are using the consume metaparameter to consume a capability resource. You use the following script:
+
+define web(..) { .. }
+Web consumes Sql { .. }
+web { server:
+  consume => random}
+
+but receive a "capability" error. What is a likely explanation for this error?
+
+This metaparameter references a resource that is not a capability type.
+------------
+You are attempting to wrap profiles within a role that was coded by a colleague for your server system. After configuring the role to declare profile classes with "include," setting up class parameters for profiles, and removing declarations for component classes, you receive a conflict with data lookup. How should you resolve this conflict?
+
+Remove the class parameters you created for the profiles, as they are handled by data lookup.
+------------
+You are using exported resource declarations to publish the resource for use by other nodes. You have a resource named "nagios_service". What snippet can you use to collect all exported nagios_service resources?
+
+Nagios_service <<| |>>
+------------
+While creating a module, you select all of the default configurations. However, you notice that the module's metadata does not meet all the requirements for your module. What could you do to resolve this issue?
+
+Manually edit the values in the metadata.json file as needed.
+------------
+What command is used to view a list of available tasks from the orchestrator API?
+
+puppet task show
+------------
+You are tasked with diagnosing your organization's Puppet Enterprise infrastructure. When running telnet <puppet master's hostname> 8140, you receive a "Name or service not known" error. What could you do to fix this?
+
+Verify that the pe-puppetserver service is running.
+------------
+What tool is used to enforce change across nodes? 
+
+The Puppet job tool
+------------
+You are using Bolt with orchestrator to help you automate the manual work of maintaining your infrastructure. What plan snippet can you use to deploy an application?
+
+bolt plan run my_app::deploy version=1.0.2 app_servers=app db_server=db lb_server=lb --inventoryfile ./inventory.yaml --modulepath=./modules
+------------
+You are using templates to manage the content of configuration files. You are using EPP parameters and you have a string value that contains template content. What command can you use to evaluate this string value?
+
+# inline_epp(<TEMPLATE STRING>, [<PARAMETER HASH>])
+file { '/etc/ntp.conf':
+  ensure  => file,
+  content => inline_epp($ntp_conf_template, {'service_name' => 'xntpd', 'iburst_enable' => true}),
+}
+------------
+How are nodes classified by default in any Puppet open source installation?
+
+By using Puppet environment manifest data
+------------
+While attempting to re-download an old module that has since been deleted, you check the "Include Deleted Modules" box in the Forge search engine. After finding the desired module, what steps should you take to download it?
+
+Select the deleted release version from the "Select another release" dropdown list and download it.
+------------
+You operate a LDAP server. In an attempt to enact a classification system that retrieves lists of classes to be put into nodes, you integrate Puppet. After proper configuration on the Puppet server, your nodes are still not being classified as they should. What is likely causing this issue?
+
+Puppet's schema wasn't added to the LDAP server
+------------
+You are customizing built-in resources with defined resource types. You receive a "duplicate resource declaration" error. What could have prevented this error?
+
+Including the value of $title in the resource's title and name
+------------
+While installing the PDK, you decide to install it behind a proxy on a Windows system. However, the PDK lacks environment variables to communicate within the system. What code could you run to resolve this issue?
+
+`env:http_proxy="http://user:password@proxy.domain.com:port"`
+------------
+You are new to PE and are trying to write your first custom Task using Bolt. What command would you run on the Bolt command line to create and name your task?
+
+bolt task run puppet_agent::<version> --targets localhost
+------------
+You are working on managing environment content with Puppetfile, and want to declare module content with SSH private key authentication. What command would you pass to accomplish this?
+
+mod myco/privatemod,
+:git => git@git.example.com:myco/privatemod.git
+------------
+You are trying to determine if Puppet has achieved idempotency. What is a step you can take to demonstrate how Puppet can be applied repeatedly to get the same results?
+
+Change the manifest at c:\myfiles\file.pp to the following:
+file { 'C:\\Temp\\foo.txt':
+  ensure   => present,
+  content  => 'I have changed my file content.'
+}
+------------
+What is an example of a best practice you should follow when creating Hiera hierarchies?
+
+Make a short hierarchy because data files are easier to work with.
+------------
+You are trying to monitor your PE infrastructure using the Report Table and try to use the filter >= pilsen. Upon running the Report Table, you receive an error that states invalid string. What is the reason for this?
+
+pilsen is a non-numeric string, which is invalid for filters.
+------------
+What is an example of a run status you could focus on when using Node Graph?
+
+Corrective change
+------------
+You recently upgraded from Puppet Open Source to Puppet Enterprise and are trying to set up your infrastructure using the console. When trying to use a command, you receive a "500" error. Which directory should you look in to find the exact error log in Puppet Enterprise?
+
+"/var/log/pe-httpd/error.log"
+------------
+You are configuring the domain name system that is to be used for a server. After verifying that Puppet agents can reach the specified master hostname, what should you do to finish configuring your DNS?
+
+Check that the master can reach itself at the specified master hostname.
