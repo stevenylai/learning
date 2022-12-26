@@ -1,0 +1,71 @@
+============
+https://www.jdoodle.com/execute-cobol-online/
+https://quizlet.com/253847248/cs3322-final-exam-flash-cards/
+
+----------
+A program is sorting a transaction file in account order. Where would it be best to accumulate total transaction amounts by account and why?
+
+In the OUTPUT procedure since the transactions will be in the correct order.
+----------
+Which of the following is the correct template for an intrinsic function?
+
+
+FUNCTION <FunctionName>(parameters)
+----------
+Which of the following choices represent the two types of ways to execute the PERFORM..TIMES verb?
+
+Inline and Out of line
+----------
+You have a complex condition in COBOL and you need the compiler to treat it as a simple condition. What can you do to ensure this?
+
+Use brackets.
+----------
+What is true with respect to the ADVANCING clause in a WRITE statement?
+
+
+A carriage control character is generated in the record that is written
+----------
+If the SORT in a COBOL program is coded as follows, which is the correct format in the file section?
+
+SD  TRADSORT
+    ...
+01  TRADSORT-REC.
+    05  TRADSORT-KEY                 PIC X(5).
+        10 FILLER                             PIC X(55).
+----------
+What will happen if the Environment Division is not declared in a source program?
+
+Nothing will happen since the Environment Division is optional in a COBOL source program.
+----------
+In which section would SPECIAL-NAMES be specified?
+
+Configuration
+----------
+Given the following COBOL code:
+
+DATA DIVISION.
+   WORKING-STORAGE SECTION.
+   01 counter PIC 9(1) VALUE 0. 
+PROCEDURE DIVISION.
+   A.
+   PERFORM B WITH TEST BEFORE UNTIL counter>3.
+   STOP RUN.
+ 
+   C.
+   PERFORM B UNTIL counter>3.
+   STOP RUN.
+ 
+   B.
+    DISPLAY counter.
+   ADD 1 TO counter.
+
+How should the output of A. compare to the output of C.?
+
+They will both run with no errors and have the same output.
+----------
+Which code snippet indicates an incorrect usage of FILLER?
+
+05 FILLER PIC X.
+   88 WS-FLAGA VALUE 'A'.
+MOVE 'A' TO FILLER.
+----------
