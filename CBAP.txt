@@ -1,0 +1,55 @@
+https://www.iiba.org/globalassets/business-analysis-resources/the-business-analysis-standard/files/the-business-analysis-standard.pdf
+====================
+
+For requirements and solution development to continue, what should you get agreement on?
+
+Approved requirements and designs
+-------------
+What is the output of the business analysis task, prepare for elicitation?
+
+Elicitation activity plan
+-------------
+You released an internal software solution to manage the input, tracking, and reporting of purchase orders. A few departments are submitting duplicate purchase orders for the same items. To understand what may be causing this issue, what might you look at in your enterprise analysis and assessment?
+
+How roles and responsibilities are divided up within the organization
+-------------
+The questions for the CBAP exam are scenario-based questions for those with extensive business analysis experience. They give you a typical scenario a business analyst may be in and ask you to provide what?
+
+The next step that best addresses the need at hand with the most appropriate technique
+-------------
+To manage stakeholder collaboration, you agree on commitments and continuously monitor their engagement. What is the next step you should take?
+
+Involve regular, frequent, and bi-directional communication.
+-------------
+You plan to establish and maintain effective working relationships with stakeholders. What would you get as an output?
+
+Stakeholder engagement approach
+-------------
+To determine the elements of a change request, you evaluate cost and time estimates, benefits, risks, and priority. What other component can you consider?
+
+The actions you must take to enforce the change
+-------------
+While analyzing potential value, you express benefits and costs. What should you do next?
+
+Determine value
+-------------
+As a business analyst introducing external software, you are planning for unknown effects and customization needs. You work with internal stakeholders who understand the need for the change. Who else must you engage?
+
+External stakeholders who have expertise with the commercial off-the-shelf solution your company is implementing
+-------------
+What task transforms your elicitation results into the requirements and designs for your solution?
+
+Specifying and modeling requirements
+-------------
+You are considering a future business process and how it will work. You must determine the best way to change to achieve that state. What kind of analysis work are you doing?
+
+Strategy analysis
+-------------
+An IT team successfully implemented its company's customer relationship management (CRM) tool on a short schedule. You are worried because the IT team provided little training to end users on how to use the CRM tool. What could you do?
+
+Review usage and performance data after one month and conduct interviews with end users to identify any further recommendations.
+-------------
+To ensure that you specified and modeled requirements as the stakeholders explained them, what technique would you use?
+
+Data modeling
+-------------
