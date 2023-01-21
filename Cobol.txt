@@ -27,6 +27,8 @@ A carriage control character is generated in the record that is written
 ----------
 If the SORT in a COBOL program is coded as follows, which is the correct format in the file section?
 
+SORT TRADSORT ASCENDING KEY TRADSORT-KEY
+
 SD  TRADSORT
     ...
 01  TRADSORT-REC.
