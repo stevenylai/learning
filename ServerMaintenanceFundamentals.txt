@@ -1,0 +1,101 @@
+https://certification.tips/2019/08/30/the-six-steps-of-troubleshooting/
+https://learn.microsoft.com/en-us/windows-server/storage/refs/refs-overview
+
+====================
+How can you view the activation status of a Windows Server machine running the Server Core installation option?
+
+Run the slmgr.vbs command
+-------------
+What type of HPC cloud deployment model supports cloud burst?
+
+Hybrid
+-------------
+You are monitoring multiple hosts in your data center for security. You must be able to flag unauthorized external access and automate corrective action. What should you do?
+
+Implement host intrusion prevention systems (HIPS).
+-------------
+What type of basic script construct uses operators such as -eq, -ne and -gt?
+
+Comparators
+-------------
+Why would you configure a new virtual local area network (VLAN) for your servers?
+
+To isolate them within a single broadcast domain
+-------------
+You must keep track of users who are accessing documents on a file server at a remote location. Which action should you take?
+
+Set up an auditing plan.
+-------------
+What physical machine provides underlying hardware and computing resources to support virtual machines (VMs)?
+
+Host
+-------------
+What do you need in order to enable communication between virtual networks on a virtualization host?
+
+Virtual switches (vSwitch)
+-------------
+You fit a server into a rack system and use rail kits for easy maintenance; however, the slack cable at the back of the server is now hanging down the back of the rack. How can you prevent this from happening?
+
+Implement cable management arms.
+-------------
+Why would you install a host-based intrusion detection system (HIDS) on your servers?
+
+To monitor the behavior and the state of your computer systems
+-------------
+You need to configure a server with a single storage device that uses a traditional hard drive for storage and a solid-state cache. What would you do?
+
+Use a solid state hybrid drive.
+-------------
+Your organization requires multiple Microsoft licenses for various products. You need a centralized console to purchase and manage enterprise volume licensing, view enrollment details, and configure Software Assurance benefits. How can you accomplish this?
+
+Use the Microsoft Volume License Service Center (VLSC).
+-------------
+-------------
+You are creating a test environment with several virtual machines (VMs). You need to ensure that the VMs can connect to the production network while retaining their own private IP addresses. How should you configure the virtual networking to accomplish this?
+
+Enable Network Address Translation (NAT).
+-------------
+You have a Windows Server 2019 server core machine that has a new hard drive installed. The hard drive needs to be initialized and partitioned for data storage. How will you configure this?
+
+Use the diskpart.exe tool.
+-------------
+Your company has expanded and added two new offices. The new offices are supported by new local area networks (LANs) and devices. How will you initially amend the necessary documentation to reflect these changes?
+
+Update the baseline documentation.
+-------------
+What is a potential risk of improperly remediating unused network cables in a data center?
+
+Toxic discharge in case of a fire
+-------------
+At what point after a disaster would you define the maximum age of your backup set in order to get your organization's services online?
+
+When defining the recovery point objective
+-------------
+You are planning a licensing solution for users who remotely connect to servers for access to business applications. There are 24 users who work in shifts that require 3 teams of 8 people at any given time. The office has 10 computers installed. What is a cost-effective licensing model for remote connections?
+
+A per-device model
+-------------
+You are configuring site-to-site data replication. How can you ensure business continuity in the event that the primary site becomes unavailable?
+
+Implement a hot site.
+-------------
+Your servers have redundant power supplies that are all connected to a single industrial uninterruptible power supply (UPS) unit. You must extend the uptime of these servers during power outages without sacrificing resiliency, reducing your current production capacity, or exposing your application to an external network. How can you accomplish this?
+
+Acquire extra runtime modules for your UPS to extend their capacity.
+-------------
+Employees cannot save files on a shared folder on a Windows Server using the New Technology File System (NTFS). After checking the share properties, what is your next step?
+
+Review the NTFS permissions.
+-------------
+You manage enterprise licensing for servers in your organization. Each server requires a license that is linked to a particular machine. How would you incorporate the correct licensing model?
+
+Use node-locked licensing.
+-------------
+What should you emphasize when troubleshooting to establish a theory of probable cause?
+
+Question the obvious
+-------------
+An employee plugged an external USB hard drive into a database server and copied sensitive data to the drive without authorization. After resolving the current incident, what step should you take to prevent this from happening again in the future?
+
+Disable the USB ports on the server.
+-------------
