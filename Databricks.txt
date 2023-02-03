@@ -1,0 +1,94 @@
+Basics:
+- OPTIMIZE table_name ZORDER BY (col_name1, col_name2)
+
+Advanced:
+- Stream to multiple tables (txnVersion=batchId) vs multiple streams
+- Streaming aggregation spark.readStream
+                              .table("xxx")
+							  .groupBy("xxx")
+							  .agg(F.sum("xxx").alias("yyy"), F.mean("xxx").alias("zzz"))
+							  .writeStream
+							  .option("checkpointLocation", "...")
+							  .outputMode("complete")
+							  .trigger(availableNow=True)
+							  //.trigger(processingTime="5 seconds")
+							  .table("XXXXX")
+- To view stream query progress: query.recentProgressed
+- Partitioning write stream: .writeStream.partitionBy("field1", "field2")
+- Flatterning json: from_json(F.col("value").cast("string"), "field1 STRING, field2 TIMESTAMP")
+- Table constraints: ALTER TABLE tableName ADD CONSTRAINT constraintName CHECK heartRate >= 0;
+- Constraint: cannot apply if existing records violates the constraint
+- Schema evolution cannot remove fields
+- Deduplicate: .readStream.dropDuplicates(["field1", "field2"])
+- Data quality: can quarantine some data according to constraints with filter
+- readStream.withWatermark("time", "30 seconds")
+- df.explain("formatted")
+- Gold layer:
+  * Gold tables (materialized)
+  * Saved view (materialize upon each execution)
+  * Databricks SQL saved queries (use cache unless the source table has been updated)
+- Gold table recommendations
+  * Use saved views when filtering silver tables
+  * Use delta tables for common partial aggregates
+  * Share SQL queries and dashboards within teams
+  * Create views with column aliases
+  * Analyze query history to identify new candidate gold tables
+  * Query history can also be used to identifying predicates usage for ZORDER indexing
+- PII:
+  * Categorical generalization
+  * Binning
+  * Truncating IP
+  * Rounding
+- PII look up with hashed id: sha2(concat(user_id, "${da.salt}"), 256)
+- Show ACLs: SHOW GRANT ON VIEW table_name
+- Grant access:
+  * db level: GRANT USAGE, SELECT, READ_METADATA ON DATABASE hr TO `HR`;
+  * table level:
+    GRANT USAGE ON DATABASE hr TO `HR`;
+    GRANT SELECT, READ_METADATA	ON TABLE employee TO `HR`;
+    GRANT SELECT, READ_METADATA	ON TABLE address TO `HR`;
+  * Change owner: ALTER DATABASE hr OWNER TO `HR Admins`;
+- Enable CDF:
+  * New tables: spark.conf.set("spark.databricks.delta.properties.defaults.enableChangeDataFeed", True)
+  * Existing ALTER TABLE tableName SET TBLPROPERTIES(delta.enableChangeDataFeed = true)
+- Read CDF:
+  spark.readStream
+       .option("readChangeData", True)
+	   .option("startVersion", 0)
+	   //.option("startingTimestamp", xxx)
+	   .table("silver")
+	   .filter(F.col("_change_type").isin(["update_postimage", "insert"]))
+	   //.filter(F.col("_change_type").isin(["update_preimage"]))
+	   //.filter(F.col("_change_type").isin(["delete"]))
+	   .selectExpr("field1",
+	               "field2 AS field2Alias")
+- Set following before and after VACCUM:
+  * spark.conf.set("spark.databricks.delta.retentionDurationCheck.enabled", False)
+  * spark.conf.set("spark.databricks.delta.retentionDurationCheck.enabled", True)
+- During streaming if delete is detected, an error will occur. To ignore:
+  * spark.readStream.option("ignoreDeletes", True).table("bronze")
+- Task dependencies
+- Git: if changed 'Enable Repos Git URL Allow List' after the cluster is created then cluster needs to be restarted
+- CLI:
+  * Setup token: databricks configure --token
+  * databricks cluster list
+  * databricks job list
+- REST:
+  * ~/.netrc:
+    machine abc.databricks.com
+	login token
+	password <personal token>
+- Schedule:
+  * spark.conf.set("spark.sql.shuffle.partitions", sc.defaultParallelism)
+  * dbutils.widgets.text (define parameter for notebook with default)
+  * dbutils.widgets.get (reference parameters)
+  * spark.conf.set("spark.sql.streaming.stateStore.providerClass", "com.databricks.sql.streaming.state.RocksDBStateStoreProvider")
+  * Auto optimize: spark.conf.set("spark.databricks.delta.optimizeWrite.enabled", true)
+  * Auto compaction: spark.conf.set("spark.databricks.delta.autoCompact.enabled", true)
+  * Schedule pool: spark.sparkContext.setLocalProperty("spark.scheduler.pool", "pool1")
+- StreamingQueryListener a class to override the following methods:
+  * onQueryStarted(event: QueryStartedEvent): Unit
+  * onQueryTerminated(event: QueryTerminatedEvent): Unit
+  * onQueryProgress(event: QueryProgressEvent): Unit
+  * Add the class: spark.streams.addListener(listener)
+  
