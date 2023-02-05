@@ -9,6 +9,14 @@ What is the output of the business analysis task, prepare for elicitation?
 
 Elicitation activity plan
 -------------
+You categorized requirements as business requirements or solution requirements to better understand their scope and purpose. This is an example of using what?
+
+The requirements classification schema
+-------------
+What is an example of a requirements classification schema?
+
+Business requirements, stakeholder requirements, solution requirements, and transition requirements
+-------------
 You released an internal software solution to manage the input, tracking, and reporting of purchase orders. A few departments are submitting duplicate purchase orders for the same items. To understand what may be causing this issue, what might you look at in your enterprise analysis and assessment?
 
 How roles and responsibilities are divided up within the organization
@@ -37,6 +45,10 @@ As a business analyst introducing external software, you are planning for unknow
 
 External stakeholders who have expertise with the commercial off-the-shelf solution your company is implementing
 -------------
+A team disagrees about where to focus on upgrading its current technology. The team's ideas range from changing simple daily processes to replacing the entire system. How could you help the team analyze its options?
+
+Provide visuals of the contextual situation and break down the elements with the team to facilitate some initial prioritization ideas
+-------------
 What task transforms your elicitation results into the requirements and designs for your solution?
 
 Specifying and modeling requirements
@@ -52,4 +64,32 @@ Review usage and performance data after one month and conduct interviews with en
 To ensure that you specified and modeled requirements as the stakeholders explained them, what technique would you use?
 
 Data modeling
+-------------
+Your elicitation work generated a lot of requirements around data and the systems that will need to generate and interact with this data. To ensure that everyone understands the requirements, how might you specify these data requirements?
+
+Develop data models and data flow diagrams that a data dictionary supports.
+-------------
+As a business analyst (BA), you work to ensure that the requirements deliver the necessary solution. You will also adjust or update these requirements and designs based on agreed upon changes. Which knowledge area are you working in when you perform these tasks?
+
+Requirements lifecycle management
+-------------
+You are preparing a recommendation as to whether you should retire a solution or not. You consider ongoing cost versus initial investment and the need for the solution. What is the next factor that can affect whether you retire the solution?
+
+Opportunity cost
+-------------
+You are focused on how you can change processes to improve and meet an organization's objectives. You want to determine business analysis scope, but you cannot ensure that processes are aligned with business efficiency. What is likely the cause for this?
+
+You haven’t defined and deployed process performance measures.
+-------------
+You focus on how an organization can change its processes to improve and meet its objectives. You finish designing, modeling, executing, and monitoring. What is the next activity you should include to improve business processes?
+
+Optimizing
+-------------
+You assess a proposed requirements change to verify what aspects of the change?
+
+How it aligns with goals and affects current work 
+-------------
+Your organization does not have any requirements templates or guidance for how to capture requirements on your latest project. As a result, you use a structure that works well for the team. How might you get the most value out of this work for future projects?
+
+Build a template in the organization's collaboration tool.
 -------------
