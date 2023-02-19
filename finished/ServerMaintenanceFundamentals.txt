@@ -1,5 +1,6 @@
 https://certification.tips/2019/08/30/the-six-steps-of-troubleshooting/
 https://learn.microsoft.com/en-us/windows-server/storage/refs/refs-overview
+https://en.wikipedia.org/wiki/Standard_RAID_levels#Comparison
 
 ====================
 You are monitoring multiple hosts in your data center for security. You must be able to flag unauthorized external access and automate corrective action. What should you do?
