@@ -78,8 +78,11 @@ void print(Vector<Rest ...>)
  */
 
 // Your code goes here:
-template<int N, Vector<Rest ...>>
-struct Prepend{
+template<int N, typename T>
+struct Prepend;
+
+template<int N, int ...Rest>
+struct Prepend<N, Vector<Rest...>> {
   using type = Vector<N, Rest...>;
 };
 // ^ Your code goes here
@@ -95,9 +98,11 @@ static_assert(std::is_same_v<Prepend<1, Vector<2,3>>::type, Vector<1,2,3>>);
  */
 
 // Your code goes here:
+template<int N, typename T>
+using PrependT = Prepend<N, T>::type;
 // ^ Your code goes here
 
-// static_assert(std::is_same_v<PrependT<1, Vector<2,3>>, Vector<1,2,3>>);
+static_assert(std::is_same_v<PrependT<1, Vector<2,3>>, Vector<1,2,3>>);
 
 
 /**
@@ -105,19 +110,42 @@ static_assert(std::is_same_v<Prepend<1, Vector<2,3>>::type, Vector<1,2,3>>);
  */
 
 // Your code goes here:
+template<int N, typename T>
+struct Append;
+
+template<int N>
+struct Append<N, Vector<>> {
+  using type = Vector<N>;
+};
+
+template<int N, int H, int ... Rest>
+struct Append<N, Vector<H, Rest ...>> {
+  using type = typename Prepend<H, typename Append<N, Vector<Rest ...>>::type>::type;
+};
 // ^ Your code goes here
 
-// static_assert(std::is_same_v< Append<4, Vector<1,2,3>>::type , Vector<1,2,3,4> >);
-
+static_assert(std::is_same_v< Append<4, Vector<1,2,3>>::type , Vector<1,2,3,4> >);
 
 /**
  * 6. Define PopBack.
  */
 
 // Your code goes here:
+template<typename T>
+struct PopBack;
+
+template<int H>
+struct PopBack<Vector<H>> {
+  using type = Vector<>;
+};
+
+template<int H, int ... T>
+struct PopBack<Vector<H, T ...>> {
+  using type = typename Prepend<H, typename PopBack<Vector<T ...>>::type>::type;
+};
 // ^ Your code goes here
 
-// static_assert(std::is_same_v< PopBack<Vector<1,2,3,4>>::type , Vector<1,2,3> >);
+static_assert(std::is_same_v< PopBack<Vector<1,2,3,4>>::type , Vector<1,2,3> >);
 
 
 /**
@@ -125,9 +153,21 @@ static_assert(std::is_same_v<Prepend<1, Vector<2,3>>::type, Vector<1,2,3>>);
  */
 
 // Your code goes here:
+template<int N, typename T>
+struct RemoveFirst;
+
+template<int N>
+struct RemoveFirst<N, Vector<>> {
+  using type = Vector<>;
+};
+
+template<int N, int H, int ... T>
+struct RemoveFirst<N, Vector<H, T ...>> {
+  using type = typename std::conditional_t<N == H, Vector<T...>, typename Prepend<H, typename RemoveFirst<N, Vector<T...>>::type>::type>;
+};
 // ^ Your code goes here
 
-// static_assert(std::is_same_v<RemoveFirst<1, Vector<1,1,2>>::type, Vector<1,2>>);
+static_assert(std::is_same_v<RemoveFirst<1, Vector<1,1,2>>::type, Vector<1,2>>);
 
 
 /**
@@ -135,9 +175,21 @@ static_assert(std::is_same_v<Prepend<1, Vector<2,3>>::type, Vector<1,2,3>>);
  */
 
 // Your code goes here:
+template<int N, typename T>
+struct RemoveAll;
+
+template<int N>
+struct RemoveAll<N, Vector<>> {
+  using type = Vector<>;
+};
+
+template<int N, int H, int ... T>
+struct RemoveAll<N, Vector<H, T ...>> {
+  using type = typename std::conditional_t<N == H, typename RemoveAll<N, Vector<T ...>>::type, typename Prepend<H, typename RemoveAll<N, Vector<T...>>::type>::type>;
+};
 // ^ Your code goes here
 
-// static_assert(std::is_same_v<RemoveAll<9, Vector<1,9,2,9,3,9>>::type, Vector<1,2,3>>);
+static_assert(std::is_same_v<RemoveAll<9, Vector<1,9,2,9,3,9>>::type, Vector<1,2,3>>);
 
 
 /**
@@ -146,9 +198,21 @@ static_assert(std::is_same_v<Prepend<1, Vector<2,3>>::type, Vector<1,2,3>>);
  */
 
 // Your code goes here:
+template<typename T>
+struct Length;
+
+template<>
+struct Length<Vector<>> {
+  static constexpr int value = 0;
+};
+
+template<int H, int ... T>
+struct Length<Vector<H, T...>> {
+  static constexpr int value = 1 + Length<Vector<T ...>>::value;
+};
 // ^ Your code goes here
 
-// static_assert(Length<Vector<1,2,3>>::value == 3);
+static_assert(Length<Vector<1,2,3>>::value == 3);
 
 
 /**
@@ -157,10 +221,12 @@ static_assert(std::is_same_v<Prepend<1, Vector<2,3>>::type, Vector<1,2,3>>);
  */
 
 // Your code goes here:
+template<typename T>
+constexpr int length = Length<T>::value;
 // ^ Your code goes here
 
-// static_assert(length<Vector<>> == 0);
-// static_assert(length<Vector<1,2,3>> == 3);
+static_assert(length<Vector<>> == 0);
+static_assert(length<Vector<1,2,3>> == 3);
 
 
 /**
@@ -275,6 +341,6 @@ int main()
   print(Vector<>{});
   print(Vector<1>{});
   print(Vector<1,2,3,4,5,6>{});
-//     std::cout << typeid(Vector<1,2,3,4,5,6>{}).name() << '\n';
+  std::cout << typeid(Vector<1,2,3,4,5,6>{}).name() << '\n';
   std::cout << "done" << std::endl;
 }
