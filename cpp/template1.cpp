@@ -28,6 +28,7 @@
 //
 
 #include <iostream>
+#include <algorithm>
 #include <type_traits>
 
 namespace {
@@ -201,14 +202,9 @@ static_assert(std::is_same_v<RemoveAll<9, Vector<1,9,2,9,3,9>>::type, Vector<1,2
 template<typename T>
 struct Length;
 
-template<>
-struct Length<Vector<>> {
-  static constexpr int value = 0;
-};
-
-template<int H, int ... T>
-struct Length<Vector<H, T...>> {
-  static constexpr int value = 1 + Length<Vector<T ...>>::value;
+template<int ... T>
+struct Length<Vector<T...>> {
+  static constexpr int value = sizeof...(T);
 };
 // ^ Your code goes here
 
@@ -234,11 +230,18 @@ static_assert(length<Vector<1,2,3>> == 3);
  */
 
 // Your code goes here:
+template<typename T>
+struct Min;
+
+template<int ... T>
+struct Min<Vector<T...>> {
+  static constexpr int value = std::min(std::initializer_list<int>{T...});
+};
 // ^ Your code goes here
 
-// static_assert(Min<Vector<3,1,2>>::value == 1);
-// static_assert(Min<Vector<1,2,3>>::value == 1);
-// static_assert(Min<Vector<3,2,1>>::value == 1);
+static_assert(Min<Vector<3,1,2>>::value == 1);
+static_assert(Min<Vector<1,2,3>>::value == 1);
+static_assert(Min<Vector<3,2,1>>::value == 1);
 
 
 /**
@@ -246,11 +249,26 @@ static_assert(length<Vector<1,2,3>> == 3);
  */
 
 // Your code goes here:
+template<typename T>
+struct Sort;
+
+template<>
+struct Sort<Vector<>> {
+    using type = Vector<>;
+};
+
+template<int ... T>
+struct Sort<Vector<T...>> {
+  static constexpr int min_value = Min<Vector<T...>>::value;
+  using tail = RemoveFirst<min_value, Vector<T...>>::type;
+
+  using type = Prepend<min_value, typename Sort<tail>::type>::type;
+};
 // ^ Your code goes here
 
-// static_assert(std::is_same_v<Sort<Vector<4,1,2,5,6,3>>::type, Vector<1,2,3,4,5,6>>);
-// static_assert(std::is_same_v<Sort<Vector<3,3,1,1,2,2>>::type, Vector<1,1,2,2,3,3>>);
-// static_assert(std::is_same_v<Sort<Vector<2,2,1,1,3,3>>::type, Vector<1,1,2,2,3,3>>);
+static_assert(std::is_same_v<Sort<Vector<4,1,2,5,6,3>>::type, Vector<1,2,3,4,5,6>>);
+static_assert(std::is_same_v<Sort<Vector<3,3,1,1,2,2>>::type, Vector<1,1,2,2,3,3>>);
+static_assert(std::is_same_v<Sort<Vector<2,2,1,1,3,3>>::type, Vector<1,1,2,2,3,3>>);
 
 
 /**
