@@ -1,0 +1,53 @@
+Which functionality does the 'Can Use' permission level enable on a Databricks SQL endpoint?
+
+View own queries, view endpoint details, and start endpoint
+--------------------------------
+You wrote the following SQL statement to migrate data from an Amazon S3 bucket to an Azure Data Lake Storage location:
+
+COPY INTO COPY INTO delta.`abfss://container/deltaTables/data` 
+  WITH (CREDENTIAL target_credential) 
+FROM 's3://my-bucket/data' 
+  WITH (CREDENTIAL source_credential) 
+FILEFORMAT = CSV
+VALIDATE
+
+The statement executes successfully, but no data is pushed to the target location. What is the most likely explanation for this?
+
+The query is executing in dry run mode.
+--------------------------------
+You are a Databricks user who wants to create a local table. How would you accomplish this?
+
+Create the table programmatically.
+--------------------------------
+You are a data analyst who is visualizing data in Databricks. You execute a query that returns dates and transaction amounts and visualizes the results in a line chart. Databricks shows a vertical line for January 15 values. Why is that?
+
+There are two records for January 15 returned in your query.
+--------------------------------
+What is a use case of the SQL Data Definition Language (DDL)?
+
+Creating a reusable SQL scalar function
+--------------------------------
+What is used in Databricks to guarantee transactional commits for SQL queries?
+
+Databricks I/O (DBIO)
+--------------------------------
+As a data engineer, you create a SQL endpoint computing resource on Databricks. You author a query, but the endpoint slows considerably because more users are concurrently accessing the query. What is one way to improve this performance issue?
+
+Increase the endpoint's cluster scaling maximum.
+--------------------------------
+Which platform can you use as a destination for a Databricks monitoring alert?
+
+Slack
+--------------------------------
+How can you run SQL Server on an Ubuntu operating system (OS)?
+
+Have Docker run a SQL Server installation.
+--------------------------------
+You want to deploy Databricks on an Azure environment. How can you configure the virtual network on Azure for the Databricks deployment?
+
+Create a virtual network with a private container subnet and a public host subnet. Ensure the Classless Inter-Domain Routing (CIDR) block for the subnets is smaller than /26.
+--------------------------------
+Which plan will allow you to set up a Databricks platform with Serverless SQL Compute endpoints?
+
+Premium
+--------------------------------
